@@ -1,13 +1,30 @@
+    
 {
-	"manifest_version": 1,
-	"name": "Personal Vocabulary by Kardin",
-	"description": "Персональний словник",
+	"manifest_version": 2,
+	"name": "Personal Vocabulary",	
 	"version": "0.0.1",
-		
-	"browser_action": {
-		"default_icon": "icon.png",
-		"default_popup": "popup.html"
+	"description": "Personal Vocabulary by Kardin",
+	
+	"icons": { "16": "icon16.png",
+		"48": "icon48.png",
+	 "128": "icon128.png" 
 	},
 	
-	"permissions": ["activeTab"]
+	"browser_action": {
+    "default_popup": "popup.html"
+	},
+	
+  "permissions": [
+    "storage",
+    "activeTab"
+	],
+	
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": ["content.js"]
+		}
+	]
 }
