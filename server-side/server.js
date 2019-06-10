@@ -1,9 +1,10 @@
-var express = require('express'),
-    app = express(),
-    port = process.env.PORT || 3000;
-    mongoose = require('mongoose');
-    pVocab = require('./api/models/model');
-    bodyParser = require('body-parser');
+var express      = require('express'),
+    app          = express(),
+    port         = process.env.PORT || 3000;
+var path         = require('path')    
+var mongoose     = require('mongoose');
+    pVocab       = require('./api/models/model');
+    bodyParser   = require('body-parser');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://ip/dbname');
@@ -14,8 +15,8 @@ app.use(bodyParser.json());
 var routes = require('./api/routes/routes');
 routes(app);
 
-app.use(function(req, res) {
-    res.status(404).send({url: req.originalUrl + ' not found'})
-});
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.listen(port);
