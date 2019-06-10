@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>Personal Vocabulary</title>
+    <script src="popup.js"></script>
+    <script type="text/javascript" src="./libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./libs/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/popup.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+  </head>
+  <body>
+  <a href="#" id="go-to-options"><p style="text-align: center;">Options</p></a>
+    <h1 class="rounded" style="text-align: center;">Список обраних слів:</h1>
+   <div class="mainCont">
+    <div class="wordsSection"><ol id="wordList" class="rounded"></ol></div>
+      <div id="buttons-row" class="container text-center">
+        <div class="row">
+          <div class="col">
+              <button type="button" class="btn btn-outline-primary" id="sendAllItems" style="visibility: hidden;">Send</button>
+          </div>
+          <div class="col">
+              <button type="button" class="btn btn-outline-primary" id="removeAllItems" style="visibility: hidden;">Delete</button>
+          </div>
+        </div>
+      </div>
+   </div>
+  </body>
+</html>

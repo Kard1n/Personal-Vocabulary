@@ -2,29 +2,33 @@
 {
 	"manifest_version": 2,
 	"name": "Personal Vocabulary",	
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Personal Vocabulary by Kardin",
 	
-	"icons": { "16": "icon16.png",
+	"icons": { 
+		"16": "icon16.png",
 		"48": "icon48.png",
-	 "128": "icon128.png" 
+	 	"128": "icon128.png" 
 	},
 	
 	"browser_action": {
-    "default_popup": "popup.html"
+    	"default_popup": "popup.html"
 	},
 	
-  "permissions": [
-    "storage",
-    "activeTab"
+ 	"permissions": [
+		"storage",
+		"activeTab"
 	],
 	
-	"content_scripts": [
+	"options_ui":{
+		"page": "options.html",
+		"open_in_tab": false
+	},
+	
+	"content_scripts": [ 
 		{
-			"matches": [
-				"<all_urls>"
-			],
-			"js": ["content.js"]
+			"matches": [ "<all_urls>" ],
+			"js": [ "content.js" ]
 		}
 	]
 }
