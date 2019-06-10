@@ -1,7 +1,8 @@
-let selectedUserWord = []; 
+let selectedUserWord = [];
 let dummyList = [];
 document.onclick = function(){
-	let selectedWord = window.getSelection().toString(); 
+	let selectedWord = window.getSelection().toString();
+
 	if(selectedWord.length != 0){
 		var tempString = selectedWord;
 		tempString = tempString.replace(/\,+|\.+|\-+|\–+|\d+/g, '');
